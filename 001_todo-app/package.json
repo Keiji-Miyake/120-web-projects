@@ -1,0 +1,25 @@
+{
+  "name": "todo-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write 'src/**/*.{ts,html,css}'",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.0",
+    "vite": "^5.1.0",
+    "vitest": "^1.3.0"
+  }
+}
