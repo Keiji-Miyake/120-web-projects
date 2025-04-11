@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓アプリ</title>
+    <style>
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 24px;
+            text-align: right;
+            background-color: #f0f0f0;
+            border: 1px solid #999;
+        }
+
+        .formula {
+            width: 100%;
+            height: 20px;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 14px;
+            text-align: right;
+            color: #666;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .operator {
+            background-color: #f8f8f8;
+        }
+
+        .equals {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="formula" id="formula"></div>
+        <input type="text" class="display" id="display" readonly>
+        <div class="buttons">
+            <button class="clear" id="clear">C</button>
+            <button class="operator" id="divide">/</button>
+            <button class="operator" id="multiply">*</button>
+            <button class="operator" id="subtract">-</button>
+            
+            <button class="number" id="num7">7</button>
+            <button class="number" id="num8">8</button>
+            <button class="number" id="num9">9</button>
+            <button class="operator" id="add">+</button>
+            
+            <button class="number" id="num4">4</button>
+            <button class="number" id="num5">5</button>
+            <button class="number" id="num6">6</button>
+            <button class="number" id="num0">0</button>
+            
+            <button class="number" id="num1">1</button>
+            <button class="number" id="num2">2</button>
+            <button class="number" id="num3">3</button>
+            <button class="equals" id="equals">=</button>
+        </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
