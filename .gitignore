@@ -70,3 +70,5 @@ lerna-debug.log*
 *.swp
 *.swo
 *~
+
+.next
