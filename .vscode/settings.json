@@ -1,0 +1,34 @@
+{
+  // プロンプトファイルを有効にする
+  "chat.promptFiles": true,
+  // コード生成のカスタム指示
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "コードを生成する際は、以下のガイドラインに従ってください：\n1. TypeScriptの型を適切に使用する\n2. モダンなJavaScript/TypeScriptの構文を使用する\n3. コードの再利用性と保守性を重視する\n4. テストしやすい設計を心がける\n5. コメントを適切に追加して、コードの理解を助ける"
+    }
+  ],
+  // テスト生成のカスタム指示
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "text": "テストを生成する際は、以下のガイドラインに従ってください：\n1. Jestを使用したテストを作成する\n2. テストケースは網羅的かつ明確に定義する\n3. テスト関数名は「テスト対象_期待される動作_条件」の形式で命名する\n4. テストデータは適切に分離し、再利用可能にする\n5. モックとスタブを適切に使用する"
+    }
+  ],
+  // コードレビューのカスタム指示
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "text": "コードレビュー時は、以下の点に注意してください：\n1. パフォーマンスの問題を識別する\n2. セキュリティ上の懸念事項を指摘する\n3. リファクタリングの機会を特定する\n4. ベストプラクティスからの逸脱を指摘する\n5. 型の使用が適切かチェックする"
+    }
+  ],
+  // コミットメッセージ生成のカスタム指示
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "コミットメッセージは以下の形式で生成してください：\n1. 1行目: 変更の要約（50文字以内）\n2. 2行目: 空行\n3. 3行目以降: 変更の詳細な説明\n4. 関連するチケット番号があれば末尾に記載（例: #123）\n5. 変更の種類に応じて接頭辞を付ける（feat:, fix:, docs:, style:, refactor:, test:, chore:）"
+    }
+  ],
+  // PRの説明生成のカスタム指示
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "text": "PR説明は以下の構造で生成してください：\n1. 概要: 変更の簡潔な説明\n2. 変更内容: 主要な変更点の箇条書き\n3. テスト: テスト方法の説明\n4. スクリーンショット: 必要に応じてUIの変更を示す指示\n5. 関連チケット: 関連するチケットへのリンク"
+    }
+  ]
+}
