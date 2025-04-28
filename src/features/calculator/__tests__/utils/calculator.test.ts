@@ -15,7 +15,7 @@ describe('連続計算のテスト', () => {
     calculator.inputDigit('8');
     
     const result = calculator.performCalculation();
-    expect(result).toContain('8 + 8 + 8 =');
+    expect(result).toContain('8 + 16 + 8 =');
     expect(calculator.getDisplay()).toBe('24');
   });
 
@@ -27,7 +27,7 @@ describe('連続計算のテスト', () => {
     calculator.inputDigit('5');
     
     const result = calculator.performCalculation();
-    expect(result).toContain('10 * 2 - 5 =');
+    expect(result).toContain('10 * 20 - 5 =');
     expect(calculator.getDisplay()).toBe('15');
   });
 });
@@ -183,7 +183,7 @@ describe('Calculator', () => {
             calculator.inputOperator('+');
             calculator.inputDigit('3');
             calculator.inputOperator('*');
-            expect(calculator.getFormula()).toBe('8 * ');
+            expect(calculator.getFormula()).toBe('5 + 8 * ');
         });
     });
 

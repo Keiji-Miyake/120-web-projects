@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { TodoList } from '../../components/TodoList'
-import type { Todo, Props } from '../../types'
+import type { Todo, TodoListProps } from '../../types'
 
 describe('TodoList', () => {
   const mockTodos: Todo[] = [
@@ -9,7 +9,7 @@ describe('TodoList', () => {
     { id: '2', text: 'タスク2', completed: true, createdAt: new Date() },
   ]
 
-  const mockHandlers: Pick<Props, 'onToggle' | 'onDelete'> = {
+  const mockHandlers: Pick<TodoListProps, 'onToggle' | 'onDelete'> = {
     onToggle: jest.fn(),
     onDelete: jest.fn(),
   }
@@ -65,17 +65,13 @@ describe('TodoList', () => {
 
     // 未完了タスクのスタイル確認
     const incompleteText = screen.getByText('タスク1')
-    expect(incompleteText).toHaveStyle({
-      textDecoration: 'none',
-      color: '#111827',
-    })
+    expect(incompleteText.className).not.toContain('line-through');
+    expect(incompleteText.className).not.toContain('text-gray-500');
 
     // 完了タスクのスタイル確認
-    const completeText = screen.getByText('タスク2')
-    expect(completeText).toHaveStyle({
-      textDecoration: 'line-through',
-      color: '#6B7280',
-    })
+    const completeText = screen.getByText('タスク2');
+    expect(completeText.className).toContain('line-through');
+    expect(completeText.className).toContain('text-gray-500');
   })
 
   it('アクセシビリティ属性が適切に設定されている', () => {

@@ -11,8 +11,15 @@ export type Todo = {
 /**
  * TodoListコンポーネントのProps型定義
  */
-export type Props = {
+export type TodoListProps = {
   todos: Todo[]
   onToggle: (id: string) => void
   onDelete: (id: string) => void
+}
+
+/**
+ * TodoFormコンポーネントのProps型定義
+ */
+export type TodoFormProps = {
+  onSubmit: (text: string) => void
 }
