@@ -43,6 +43,7 @@ export const TodoForm = memo(({ onSubmit }: TodoFormProps) => {
           className="flex-1 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           placeholder="新しいタスクを入力"
           aria-label="新しいタスクの入力"
+          data-testid="todo-input"
         />
         <button
           type="submit"

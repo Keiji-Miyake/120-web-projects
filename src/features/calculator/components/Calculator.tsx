@@ -53,7 +53,6 @@ export const Calculator: FC = () => {
       console.error('[DEBUG][Component] calculate error:', e);
     }
     setDisplay(calc.getDisplay());
-    // performCalculationでformulaをセットするためsetFormulaは不要
   }, [calc]);
 
   // キーボード操作対応
@@ -92,10 +91,17 @@ export const Calculator: FC = () => {
   }, [handleKeyDown]);
 
   return (
-    <div className={styles.calculator}>
-      <div className={styles.formula} aria-label="formula">{formula}</div>
-      <input type="text" className={styles.display} value={display} readOnly />
-      <div className={styles.buttons}>
+    <div className={styles.calculator} role="application" aria-label="電卓">
+      <div className={styles.formula} data-testid="formula" aria-live="polite">{formula}</div>
+      <input 
+        type="text" 
+        className={styles.display} 
+        value={display} 
+        readOnly 
+        aria-label="計算結果"
+      />
+      <fieldset className={styles.buttons}>
+        <legend className="sr-only">数字と演算子</legend>
         <button type="button" className={`${styles.button} ${styles.clear}`} onClick={handleClear}>C</button>
         <button type="button" className={`${styles.button} ${styles.operator}`} onClick={() => handleOperatorClick('/' as Operator)}>÷</button>
         <button type="button" className={`${styles.button} ${styles.operator}`} onClick={() => handleOperatorClick('*' as Operator)}>×</button>
@@ -114,7 +120,7 @@ export const Calculator: FC = () => {
         <button type="button" className={styles.button} onClick={() => handleNumberClick('0')}>0</button>
         <button type="button" className={styles.button} onClick={handleToggleSign}>+/-</button>
         <button type="button" className={`${styles.button} ${styles.equals}`} onClick={handleEquals}>=</button>
-      </div>
+      </fieldset>
     </div>
   );
 };

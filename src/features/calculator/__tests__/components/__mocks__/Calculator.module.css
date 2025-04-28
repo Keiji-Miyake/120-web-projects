@@ -1,0 +1,6 @@
+export default {
+  calculator: 'calculator',
+  display: 'display',
+  formula: 'formula',
+  buttons: 'buttons'
+};
