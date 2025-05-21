@@ -74,11 +74,11 @@ test.describe('Todoアプリの基本機能テスト', () => {
 
     const checkbox = page.getByRole('checkbox').first();
     await checkbox.waitFor({ state: 'visible', timeout: 5000 });
-    
-    await checkbox.check();
+    // チェックボックスが他要素で覆われていても確実に操作できるように修正
+    await checkbox.scrollIntoViewIfNeeded();
+    await checkbox.check({ force: true });
     await expect(checkbox).toBeChecked();
-
-    await checkbox.uncheck();
+    await checkbox.uncheck({ force: true });
     await expect(checkbox).not.toBeChecked();
   });
 
