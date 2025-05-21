@@ -4,17 +4,17 @@ import { memo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTodoAnimations } from '../hooks/useTodoAnimations'
 import { TodoItem } from './TodoItem'
-import type { Props } from '../types'
+import type { TodoListProps } from '../types'
 
 /**
  * Todoリストを表示するコンポーネント
  * アニメーション付きのリストアイテム、チェックボックス、削除ボタンを含む
  */
-export const TodoList = memo(({ todos, onToggle, onDelete }: Props) => {
+export const TodoList = memo(({ todos, onToggle, onDelete }: TodoListProps) => {
   const { animations, transitions } = useTodoAnimations()
 
   return (
-    <motion.ul className="space-y-2">
+    <motion.ul className="space-y-2" data-testid="todo-list">
       <AnimatePresence mode="popLayout" initial={false}>
         {todos.length === 0 ? (
           <motion.li
