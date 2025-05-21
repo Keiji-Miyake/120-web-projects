@@ -151,6 +151,7 @@ export class Calculator {
      * イコールボタンの処理
      */
     public performCalculation(): string {
+        console.debug('[LOG][performCalculation] calculationHistory=', this.state.calculationHistory);
         try {
             const result = this.calculate();
             // 計算過程を記録
@@ -200,6 +201,7 @@ export class Calculator {
      * 現在の表示値を取得する
      */
     public getDisplay(): string {
+        console.debug('[LOG][getDisplay] display=', this.state.display);
         return this.state.display;
     }
 

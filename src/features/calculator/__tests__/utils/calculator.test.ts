@@ -183,6 +183,7 @@ describe('Calculator', () => {
             calculator.inputDigit('3');
             calculator.inputOperator('*');
             expect(calculator.getFormula()).toBe('8 * ');
+        });
     });
 
     describe('クリア機能', () => {
